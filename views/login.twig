@@ -1,0 +1,11 @@
+{% extends 'layout.twig' %}
+{% block content %}
+<form action="/php/auth" method="POST">
+    <h1>Login</h1>
+    <label for="">E-mail:</label>
+    <input type="text" name="email"><br>
+    <label for="">Password:</label>
+    <input type="password" name="password"><br>
+    <input type="submit" name="send" value="Login"><br>
+</form>
+{% endblock %}

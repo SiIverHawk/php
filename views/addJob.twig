@@ -1,0 +1,12 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+<h1>Add Job</h1>
+    <form action="/php/jobs/add" method="post" enctype="multipart/form-data">
+        <label for="">Title:</label>
+        <input type="text" name="title"><br>
+        <label for="">Description:</label>
+        <input type="text" name="description"><br>
+        <button type="submit">Save</button>
+    </form>
+{% endblock %}
