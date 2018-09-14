@@ -57,59 +57,59 @@ $routerContainer = new RouterContainer();
 $map = $routerContainer->getMap();
 
 //creando mapas de las rutas que se desean
-$map->get('php', '/php/', [
+$map->get('php', '/workspace/php/', [
     'controller' => 'App\Controllers\IndexController',
     'action' => 'IndexAction'
     ]);
-$map->get('addJobs', '/php/jobs/add', [
+$map->get('addJobs', '/workspace/php/jobs/add', [
     'controller' => 'App\Controllers\JobsController',
     'action' => 'getAddJobAction',
     'auth' => true
     ]);
-$map->get('addProjects', '/php/projects/add', [
+$map->get('addProjects', '/workspace/php/projects/add', [
     'controller' => 'App\Controllers\ProjectsController',
     'action' => 'getAddProjectsAction',
     'auth' => true
     ]);
 
-$map->get('addUsers', '/php/users/add', [
+$map->get('addUsers', '/workspace/php/users/add', [
     'controller' => 'App\Controllers\UserController',
     'action' => 'getAddUserAction',
     'auth' => true
 ]);
 
-$map->get('loginForm', '/php/login', [
+$map->get('loginForm', '/workspace/php/login', [
     'controller' => 'App\Controllers\AuthController',
     'action' => 'getLoginAction'
 ]);
 
-$map->get('admin', '/php/admin', [
+$map->get('admin', '/workspace/php/admin', [
     'controller' => 'App\Controllers\AdminController',
     'action' => 'getIndexAction',
     'auth' => true
 ]);
 
-$map->get('logout', '/php/logout', [
+$map->get('logout', '/workspace/php/logout', [
     'controller' => 'App\Controllers\AuthController',
     'action' => 'getLogoutAction'
 ]);
 
-$map->post('saveJobs', '/php/jobs/add', [
+$map->post('saveJobs', '/workspace/php/jobs/add', [
         'controller' => 'App\Controllers\JobsController',
         'action' => 'getAddJobAction'
         ]);
 
-$map->post('saveProjects', '/php/projects/add', [
+$map->post('saveProjects', '/workspace/php/projects/add', [
         'controller' => 'App\Controllers\ProjectsController',
         'action' => 'getAddProjectsAction'
         ]);
 
-$map->post('auth', '/php/auth', [
+$map->post('auth', '/workspace/php/auth', [
     'controller' => 'App\Controllers\AuthController',
     'action' => 'postLoginAction'
 ]);
 
-$map->post('saveUsers', '/php/users/add', [
+$map->post('saveUsers', '/workspace/php/users/add', [
     'controller' => 'App\Controllers\UserController',
     'action' => 'getAddUserAction', 
 ]);
@@ -133,7 +133,7 @@ if (!$route) {
     $sessionUserId = $_SESSION['userID'] ?? null;
 
     if ($needsAuth && !$sessionUserId) {
-        header("Location: /php/login");
+        header("Location: /workspace/php/login");
         die();
     }
     
